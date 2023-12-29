@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Tailwind CSS Command -->
+  <!-- 
+    npx tailwindcss -i ./src/input.css -o ./dist/assets/css/output.css --watch 
+   -->
+
+  <head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- Google Font CDN Links -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CSS File Link -->
+    <link href="assets/css/bootstrap-icon.css" rel="stylesheet" />
+    <!-- Tailwind CSS File Link -->
+    <link href="assets/css/output.css" rel="stylesheet" />
+    <!-- Custom CSS File Link -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <title>What to do...?</title>
+  </head>
+
+  <body class="bg-zinc-200 dark:bg-zinc-900">
+    <main
+      class="h-screen bg-cover bg-no-repeat bg-center"
+      style="background-image: url('assets/images/bg.png')"
+    >
+      <!-- Navbar -->
+      <div class="p-3">
+        <div class="flex justify-between items-center container mx-auto">
+          <i
+            class="bi bi-journal-bookmark text-violet-500 text-2xl leading-3"
+          ></i>
+          <!-- Light/Dark mode togglers -->
+          <button
+            type="button"
+            id="changeTheme"
+            class="w-9 h-9 rounded-full flex justify-center items-center text-sm text-zinc-700 dark:text-white bg-zinc-300/50 dark:bg-zinc-700 hover:bg-zinc-300/80 dark:hover:bg-zinc-600 transition-all"
+          >
+            <i class="bi bi-moon-stars leading-3"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Main box container -->
+      <section
+        class="overflow-hidden flex justify-center items-center p-4 mt-5"
+      >
+        <!-- Main box -->
+        <div
+          class="bg-zinc-100 dark:bg-zinc-800 lg:w-[750px] md:w-[650px] sm:w-[550px] w-full sm:p-8 p-4 rounded-2xl"
+        >
+          <!-- Main Heading -->
+          <h1
+            class="text-center text-violet-500 sm:text-xl text-sm font-semibold uppercase flex items-center justify-center"
+          >
+            Tasks to be done!
+          </h1>
+          <!-- Task input feild -->
+          <div class="mt-5 flex items-center mb-4 overflow-hidden rounded-md">
+            <input
+              type="text"
+              id="taskInput"
+              class="block w-full py-3 px-4 border-0 outline-none bg-zinc-200/60 dark:bg-zinc-900/50 placeholder:text-zinc-700 dark:placeholder:text-zinc-100 text-zinc-800 dark:text-white sm:text-sm text-xs font-medium dark:font-normal focus:bg-zinc-200 dark:focus:bg-zinc-700/30 transition-all"
+              placeholder="Enter your task here..."
+            />
+            <button
+              type="button"
+              class="bg-violet-500 dark:bg-violet-600 hover:bg-violet-600 dark:hover:bg-violet-700 transition-all text-white font-medium sm:text-sm text-xs py-3 sm:px-6 px-4"
+              id="saveTaskBtn"
+            >
+              Save
+            </button>
+          </div>
+          <!-- Error handler box -->
+          <div
+            id="error"
+            class="sm:text-sm text-xs text-violet-600 font-medium text-center"
+          ></div>
+          <!-- Task Container -->
+          <div
+            class="mt-5 bg-zinc-200/50 dark:bg-zinc-900/50 rounded-lg overflow-x-hidden overflow-y-auto max-h-[50vh]"
+          >
+            <ul
+              id="listContaienr"
+              class="text-zinc-700 dark:text-white sm:text-sm text-xs font-medium dark:font-normal"
+            ></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
